@@ -8,3 +8,6 @@
 # JVM / Kotlin / Gradle artifacts
 *.class
 *.jar
+
+# VS Code settings
+.vscode/
