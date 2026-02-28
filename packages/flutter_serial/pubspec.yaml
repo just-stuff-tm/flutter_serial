@@ -1,0 +1,48 @@
+name: flutter_serial
+description: "A new Flutter plugin project."
+version: 0.0.1
+homepage:
+publish_to: none
+
+environment:
+  sdk: ^3.11.0
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_serial_platform_interface:
+    path: ../flutter_serial_platform_interface
+  flutter_serial_android:
+    path: ../flutter_serial_android
+  flutter_serial_ios:
+    path: ../flutter_serial_ios
+  flutter_serial_linux:
+    path: ../flutter_serial_linux
+  flutter_serial_macos:
+    path: ../flutter_serial_macos
+  flutter_serial_windows:
+    path: ../flutter_serial_windows
+  flutter_serial_web:
+    path: ../flutter_serial_web
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: flutter_serial_android
+      ios:
+        default_package: flutter_serial_ios
+      linux:
+        default_package: flutter_serial_linux
+      macos:
+        default_package: flutter_serial_macos
+      windows:
+        default_package: flutter_serial_windows
+      web:
+        default_package: flutter_serial_web
