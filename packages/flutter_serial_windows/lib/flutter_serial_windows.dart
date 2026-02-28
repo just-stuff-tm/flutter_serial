@@ -10,8 +10,11 @@ class FlutterSerialWindows extends FlutterSerialPlatform {
   }
 
   @override
-  Future<SerialConnection> open(SerialDevice device, SerialConfig config) async {
-    return openSerial(device.id);
+  Future<SerialConnection> open(
+    SerialDevice device,
+    SerialConfig config,
+  ) async {
+    return openSerial(device.id, config.baudRate);
   }
 }
 
