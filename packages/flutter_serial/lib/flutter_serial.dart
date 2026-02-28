@@ -1,0 +1,1 @@
+export 'package:flutter_serial_platform_interface/flutter_serial_platform_interface.dart';

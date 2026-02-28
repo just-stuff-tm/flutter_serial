@@ -1,0 +1,10 @@
+# Workspace tool output
+.dart_tool/
+.idea/
+
+# Flutter build output
+**/build/
+
+# JVM / Kotlin / Gradle artifacts
+*.class
+*.jar

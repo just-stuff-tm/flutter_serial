@@ -1,0 +1,5 @@
+name: flutter_serial_workspace
+
+packages:
+  - packages/**
+  - example

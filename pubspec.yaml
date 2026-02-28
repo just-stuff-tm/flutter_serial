@@ -1,0 +1,26 @@
+name: flutter_serial_workspace
+publish_to: none
+
+environment:
+  sdk: ">=3.12.0-162.0.dev <4.0.0"
+
+workspace:
+  - packages/flutter_serial
+  - packages/flutter_serial_platform_interface
+  - packages/flutter_serial_linux
+  - packages/flutter_serial_windows
+  - packages/flutter_serial_macos
+  - packages/flutter_serial_android
+  - packages/flutter_serial_ios
+  - packages/flutter_serial_web
+  - example
+  - packages/flutter_serial/example
+  - packages/flutter_serial_linux/example
+  - packages/flutter_serial_windows/example
+  - packages/flutter_serial_macos/example
+  - packages/flutter_serial_android/example
+  - packages/flutter_serial_ios/example
+  - packages/flutter_serial_web/example
+
+dev_dependencies:
+  melos: ^7.0.0
