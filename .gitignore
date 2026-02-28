@@ -1,0 +1,26 @@
+# Workspace tool output
+.dart_tool/
+.idea/
+
+# Flutter build output
+**/build/
+**/.flutter-plugins-dependencies
+
+# Compiled/native binaries and archives
+*.o
+*.obj
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+
+# JVM / Kotlin / Gradle artifacts
+*.class
+*.jar
+# Binary media assets (excluded for PR tooling limitations)
+*.png
+*.ico
+
