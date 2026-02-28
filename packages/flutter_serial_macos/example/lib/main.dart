@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:flutter/services.dart';
-import 'package:flutter_serial_macos/flutter_serial_macos.dart';
+import 'package:flutter_serial/flutter_serial.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _status = 'Discovering serial ports…';
-  final _flutterSerialMacosPlugin = FlutterSerialMacos();
+  String _status = 'Discovering serial ports...';
+  static const _flutterSerial = FlutterSerial();
 
   @override
   void initState() {
@@ -25,21 +23,15 @@ class _MyAppState extends State<MyApp> {
     initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     String status;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
     try {
-      final devices = await _flutterSerialMacosPlugin.listDevices();
+      final devices = await _flutterSerial.listDevices();
       status = 'Found ${devices.length} serial ports';
     } on PlatformException {
       status = 'Failed to list serial ports.';
     }
 
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
     if (!mounted) return;
 
     setState(() {

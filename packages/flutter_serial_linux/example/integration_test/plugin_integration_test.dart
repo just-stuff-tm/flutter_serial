@@ -1,4 +1,4 @@
-import 'package:flutter_serial_platform_interface/flutter_serial_platform_interface.dart';
+import 'package:flutter_serial/flutter_serial.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 

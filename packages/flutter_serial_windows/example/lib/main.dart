@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:flutter/services.dart';
-import 'package:flutter_serial_windows/flutter_serial_windows.dart';
+import 'package:flutter_serial/flutter_serial.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _status = 'Discovering serial ports…';
-  final _flutterSerialWindowsPlugin = FlutterSerialWindows();
+  String _status = 'Discovering serial ports...';
+  static const _flutterSerial = FlutterSerial();
 
   @override
   void initState() {
@@ -31,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      final devices = await _flutterSerialWindowsPlugin.listDevices();
+      final devices = await _flutterSerial.listDevices();
       status = 'Found ${devices.length} serial ports';
     } on PlatformException {
       status = 'Failed to list serial ports.';
